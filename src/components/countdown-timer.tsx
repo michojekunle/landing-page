@@ -1,54 +1,55 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 interface CountdownTimerProps {
-  targetDate: string
+  targetDate: string;
 }
 
 interface TimeLeft {
-  days?: number
-  hours?: number
-  minutes?: number
-  seconds?: number
+  days?: number;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
 }
 
 export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   const calculateTimeLeft = () => {
-    const difference = +new Date(targetDate) - +new Date()
-    let timeLeft: TimeLeft = {}
+    const difference = +new Date(targetDate) - +new Date();
+    let timeLeft: TimeLeft = {};
 
     if (difference > 0) {
       timeLeft = {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60)
-      }
+        seconds: Math.floor((difference / 1000) % 60),
+      };
     }
 
-    return timeLeft
-  }
+    return timeLeft;
+  };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
 
-    return () => clearTimeout(timer)
-  })
+    return () => clearTimeout(timer);
+  });
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+    <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-zinc-500 dark:text-zinc-400 uppercase text-xs sm:text-sm tracking-[0.2em]">
       {Object.entries(timeLeft).map(([interval, value]) => (
-        <div key={interval} className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-          <div className="text-3xl font-bold text-white">{value}</div>
-          <div className="text-sm text-white/80 capitalize">{interval}</div>
+        <div key={interval} className="text-center">
+          <span className="font-medium">
+            {value?.toString().padStart(2, "0")}
+          </span>{" "}
+          {interval}
         </div>
       ))}
     </div>
-  )
+  );
 }
-
