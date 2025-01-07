@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { Share2 } from 'lucide-react'
+import { Button } from "@/components/ui/button";
+import { Share2 } from "lucide-react";
 
 export default function Lorekeeper() {
   return (
@@ -9,11 +8,17 @@ export default function Lorekeeper() {
         {/* Header Section */}
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-6">
-            <div className="bg-zinc-800 rounded-full px-3 py-1 text-sm">LOREKEEPER</div>
-            <div className="bg-zinc-800 rounded-full px-3 py-1 text-sm">ALPHA</div>
+            <div className="bg-zinc-800 rounded-full px-3 py-1 text-sm">
+              LOREKEEPER
+            </div>
+            <div className="bg-zinc-800 rounded-full px-3 py-1 text-sm">
+              ALPHA
+            </div>
           </div>
           <div className="flex items-center justify-between">
-            <h1 className="text-6xl font-mono tracking-tighter">RIFT_LORE //</h1>
+            <h1 className="text-6xl font-mono tracking-tighter">
+              RIFT_LORE //
+            </h1>
             <Button variant="outline" size="lg" className="gap-2">
               <Share2 className="w-4 h-4" />
               SHARE PROFILE
@@ -50,7 +55,9 @@ export default function Lorekeeper() {
                   key={index}
                   className="bg-zinc-800/50 rounded-lg p-6 hover:bg-zinc-800 transition-colors"
                 >
-                  <h3 className="text-xl font-semibold mb-3">{highlight.title}</h3>
+                  <h3 className="text-xl font-semibold mb-3">
+                    {highlight.title}
+                  </h3>
                   <p className="text-zinc-400">{highlight.description}</p>
                 </div>
               ))}
@@ -59,7 +66,7 @@ export default function Lorekeeper() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 const features = [
@@ -70,33 +77,38 @@ const features = [
   "Quest Tracking",
   "Achievement Log",
   "Story Paths",
-  "Knowledge Base"
-]
+  "Knowledge Base",
+];
 
 const highlights = [
   {
     title: "Deep Narrative Analysis",
-    description: "Uncover hidden connections and story elements that shape the game's universe."
+    description:
+      "Uncover hidden connections and story elements that shape the game's universe.",
   },
   {
     title: "Interactive Timelines",
-    description: "Navigate complex storylines with our intuitive timeline visualization system."
+    description:
+      "Navigate complex storylines with our intuitive timeline visualization system.",
   },
   {
     title: "Character Relations",
-    description: "Map and track character relationships, alliances, and conflicts throughout the story."
+    description:
+      "Map and track character relationships, alliances, and conflicts throughout the story.",
   },
   {
     title: "World Encyclopedia",
-    description: "Access comprehensive information about locations, items, and historical events."
+    description:
+      "Access comprehensive information about locations, items, and historical events.",
   },
   {
     title: "Quest Insights",
-    description: "Get detailed breakdowns of quest chains and their impact on the overall narrative."
+    description:
+      "Get detailed breakdowns of quest chains and their impact on the overall narrative.",
   },
   {
     title: "Community Contributions",
-    description: "Collaborate with other players to expand and verify lore information."
-  }
-]
-
+    description:
+      "Collaborate with other players to expand and verify lore information.",
+  },
+];
