@@ -3,6 +3,7 @@ import './globals.css'
 import { Logo } from '@/components/logo'
 import { NavMenu } from '@/components/nav-menu'
 import { ThemeProvider } from '@/components/theme-provider'
+import Providers from '@/components/Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -42,8 +43,10 @@ export default function RootLayout({
               </div>
             </div>
           </header>
-          <main className="pt-20">
-            {children}
+          <main>
+            <Providers>
+              {children}
+            </Providers>
           </main>
         </ThemeProvider>
       </body>

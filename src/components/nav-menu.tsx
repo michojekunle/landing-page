@@ -20,6 +20,12 @@ export function NavMenu() {
       <div className="hidden lg:flex items-center gap-4">
         <NavGroup>
           <Link 
+            href="/lorekeeper"
+            className="px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors flex items-center gap-1"
+          >
+            LOREKEEPER
+          </Link>
+          <Link 
             href="https://docs.riftlend.com" 
             className="px-2 py-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors flex items-center gap-1"
             target="_blank"
