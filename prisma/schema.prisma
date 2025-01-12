@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String   @id @default(cuid())
+  email           String?  
+  name            String?
+  username        String?
+  password        String?
+  ethereumAddress String?  @unique
+  avatar          String?  @default("")
+  discordId       String   @unique
+  twitterId       String?
+  points          Int      @default(0)
+  isVerified      Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  referredById String?
+  referralCode String?
+
+  leaderboard Leaderboard?
+
+  referrals Referral[] @relation("UserReferrals")
+
+  @@map("users")
+}
+
+model Leaderboard {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  points    Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("leaderboard")
+}
+
+model Referral {
+  id         String   @id @default(cuid())
+  userId     String // The user who made the referral
+  referralId String // The referred user
+  referredAt DateTime @default(now())
+  status     String   @default("pending") // e.g., pending, completed, rewarded
+
+  user User @relation("UserReferrals", fields: [userId], references: [id])
+
+  @@map("referrals")
+}
