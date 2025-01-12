@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { Menu, X, ExternalLink } from 'lucide-react'
-import { ThemeToggle } from "./theme-toggle"
-import { Button } from "@/components/ui/button"
+import * as React from "react";
+import Link from "next/link";
+import { Menu, X, ExternalLink } from "lucide-react";
+import { ThemeToggle } from "./theme-toggle";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   //SheetTrigger,
   SheetClose,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 
 export function MobileNav() {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
 
   return (
     <>
@@ -23,11 +23,14 @@ export function MobileNav() {
         className="lg:hidden"
         onClick={() => setOpen(true)}
       >
-        <Menu className="h-5 w-5" />
+        <Menu className="h-4 w-4 text-black dark:text-white " />
         <span className="sr-only">Toggle menu</span>
       </Button>
       <Sheet open={open} onOpenChange={setOpen}>
-        <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col">
+        <SheetContent
+          side="right"
+          className="w-[300px] sm:w-[400px] flex flex-col"
+        >
           <nav className="flex flex-col gap-4">
             <SheetClose asChild>
               <Link
@@ -38,6 +41,16 @@ export function MobileNav() {
               >
                 Docs
                 <ExternalLink className="ml-1 h-3 w-3" />
+              </Link>
+            </SheetClose>
+
+            <SheetClose asChild>
+              <Link
+                href="/leaderboard"
+                className=" text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50  transition-colors flex items-center"
+              >
+                Leaderboard
+                <ExternalLink className="ml-[3px] h-[14px]" />
               </Link>
             </SheetClose>
           </nav>
@@ -79,6 +92,5 @@ export function MobileNav() {
         </SheetContent>
       </Sheet>
     </>
-  )
+  );
 }
-

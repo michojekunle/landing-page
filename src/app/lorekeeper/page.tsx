@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button } from "@/components/ui/button";
 import {  ArrowUpRight, ChevronDownIcon, CopyIcon, Diamond, DiamondPlus, Link as LinkIcon, LucideDiamond, Star  } from "lucide-react";
-import { BadgeIcon, DiamondIcon, DiscordIcon, PointsIcon, RoleIcon } from "@/assets/Icons";
-import Link from "next/link";
+import { BadgeIcon,  DiamondIcon, DiscordIcon, PointsIcon, RoleIcon } from "@/assets/Icons";
+// import Link from "next/link";
 import { getUser } from "@/hooks/useAuth";
+import Link from "next/link";
 
 export default async function Lorekeeper() {
   const user = await getUser();
@@ -25,7 +27,8 @@ export default async function Lorekeeper() {
               <h1 className="text-7xl font-extrabold">{convertToDigits(user?.points || 0)}</h1>
               <h1>/2500</h1>
             </div>
-            <div className="font-['Overused_Grotesk'] text-5xl font-normal">
+            <div className="font-gourd text-5xl font-normal">
+              {/* <h1>lorem</h1> */}
               <h1>{user?.name}</h1>
             </div>
 
@@ -63,11 +66,12 @@ export default async function Lorekeeper() {
             </div>
 
             <div className="flex items-start gap-4 mt-2">
-              <Button className="bg-[#F624211C] border-[3px] border-[#F624214D] rounded-full size-[43px] gap-2 w-fit text-white hover:bg-[#F6242133] max-w-[200px]">
+              <Link  href={discordAuthUrl}>
+              <Button  className="bg-[#F624211C] border-[3px] border-[#F624214D] rounded-full size-[43px] gap-2 w-fit text-white hover:bg-[#F6242133] max-w-[200px]">
                 <DiscordIcon />
                 <div className="text-sm font-bold truncate">{user?.discordId ? user?.discordId : "CONNECT"}</div>
                 <ChevronDownIcon className="size-4" />
-              </Button>
+              </Button></Link>
               <div className="flex flex-col items-center">
                 <Button className="bg-white text-black border-[3px] border-[#F624215C] rounded-full size-[43px] gap-2 w-fit max-w-[200px]">
                   <CopyIcon className="size-4" />
@@ -79,7 +83,11 @@ export default async function Lorekeeper() {
             </div>
 
           </div>
+          <div className="text-white">
+           <img src="./defaultAvatar.svg" className="" alt="" />
+          </div>
         </div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit cupiditate laboriosam placeat molestiae, consequuntur maiores blanditiis, praesentium voluptate, adipisci nostrum? Labore consequatur placeat delectus aperiam voluptate. Corporis, totam tempore.</div>
       </div>
     </div>
   );

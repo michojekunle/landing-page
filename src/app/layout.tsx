@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Logo } from '@/components/logo'
 import { NavMenu } from '@/components/nav-menu'
 import { ThemeProvider } from '@/components/theme-provider'
 import Providers from '@/components/Providers'
@@ -36,9 +35,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-white/[0.02] dark:bg-black/[0.02]">
-            <div className="max-w-5xl mx-auto px-4">
+            <div className="w-full lg:w-[50%] mx-auto px-4">
               <div className="flex items-center justify-between h-16">
-                <Logo />
                 <NavMenu />
               </div>
             </div>

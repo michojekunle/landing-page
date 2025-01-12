@@ -89,6 +89,27 @@ export const DiscordIcon = () => {
     )
 }
 
+export const StarIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 29 28" fill="none">
+  <g filter="url(#filter0_d_564_102)">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7532 23.5826L16.3954 18.5091C16.7292 17.4772 17.5436 16.6742 18.5793 16.3576L23.6777 14.7897C24.3834 14.5742 24.3891 13.5786 23.6891 13.3516L18.6137 11.7094C17.5837 11.3756 16.7807 10.5612 16.4622 9.52548L14.8962 4.42713C14.6807 3.7233 13.6851 3.71572 13.4581 4.41761L11.8159 9.49112C11.4821 10.5211 10.6677 11.3241 9.63195 11.6426L4.53359 13.2086C3.82791 13.426 3.82025 14.4197 4.52214 14.6467L9.59759 16.2889C10.6276 16.6227 11.4306 17.4391 11.7491 18.4747L13.3151 23.5712C13.5306 24.2769 14.5262 24.2845 14.7532 23.5826Z" fill="white"/>
+  </g>
+  <defs>
+    <filter id="filter0_d_564_102" x="0.183346" y="0.0785484" width="27.8438" height="27.8429" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="1.90833"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.36 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_564_102"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_564_102" result="shape"/>
+    </filter>
+  </defs>
+</svg>
+  )
+}
 export const DiamondIcon = () => {
   return (
     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,3 +131,5 @@ export const DiamondIcon = () => {
     </svg>
   )
 }
+
+

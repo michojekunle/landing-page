@@ -5,10 +5,11 @@ import Link from "next/link"
 import { ExternalLink } from 'lucide-react'
 import { ThemeToggle } from "./theme-toggle"
 import { MobileNav } from "./mobile-nav"
+import { Logo } from "./logo"
 
 function NavGroup({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-center px-1 gap-2 rounded-full bg-[#ECECEC] dark:bg-zinc-800">
+    <div className="hidden lg:flex items-center px-1 gap-2 rounded-full bg-[#ECECEC] dark:bg-zinc-800">
       {children}
     </div>
   )
@@ -16,25 +17,33 @@ function NavGroup({ children }: { children: React.ReactNode }) {
 
 export function NavMenu() {
   return (
-    <div className="flex items-center gap-4">
-      <div className="hidden lg:flex items-center gap-4">
-        <NavGroup>
+    <div className="flex items-center justify-between w-full gap-4">
+      <Logo />
+      <NavGroup>
           <Link 
             href="/lorekeeper"
-            className="px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors flex items-center gap-1"
+            className="custom-text px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 uppercase transition-colors flex items-center gap-1"
           >
             LOREKEEPER
           </Link>
           <Link 
+            href="/leaderboard"
+            className="px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 uppercase transition-colors flex items-center gap-1"
+          >
+          leaderboard
+          </Link>
+          <Link 
             href="https://docs.riftlend.com" 
-            className="px-2 py-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors flex items-center gap-1"
+            className="px-2 py-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 uppercase transition-colors flex items-center gap-1"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Docs
-            <ExternalLink className="w-3 h-3" />
+            <span>Docs</span>
+            <ExternalLink className="h-[16px]" />
           </Link>
         </NavGroup>
+      <div className="hidden lg:flex items-center gap-4">
+       
         
         <div className="flex items-center px-1 py-1 gap-2 rounded-full bg-[#ECECEC] dark:bg-zinc-800">
           <Link 

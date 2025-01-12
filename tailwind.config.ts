@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from "tailwindcss";
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 const config = {
   darkMode: ["class"],
@@ -18,6 +20,9 @@ const config = {
       }
     },
     extend: {
+      fontFamily:{
+        gourd:   ['GourdUnc', ...defaultTheme.fontFamily.sans],
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
