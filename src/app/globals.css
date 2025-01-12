@@ -10,6 +10,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "GourdUnc";
+  src: url("/src/fonts/GourdUnc.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @layer base {
   :root {
@@ -84,10 +91,5 @@
   body {
     @apply bg-background text-foreground;
   }
-  @font-face {
-    font-family: "GourdUnc";
-    src: url("/src/fonts/GourdUnc.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
+ 
 }

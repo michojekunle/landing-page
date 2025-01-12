@@ -1,12 +1,15 @@
+"use client"
+
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { NavMenu } from '@/components/nav-menu'
 import { ThemeProvider } from '@/components/theme-provider'
 import Providers from '@/components/Providers'
+import { usePathname } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+ const metadata = {
   title: 'RiftLend',
   description: 'One platform, all chains. Borrow and lend without the cross-chain drama',
   icons: {
@@ -25,6 +28,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const route = usePathname()
+  console.log(route)
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-gradient-to-b from-white to-zinc-50 dark:from-zinc-900 dark:to-zinc-800 text-zinc-900 dark:text-zinc-50`}>

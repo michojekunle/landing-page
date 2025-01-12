@@ -12,7 +12,7 @@ function Leaderboard() {
         }}
       ></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-screen max-w-6xl mx-auto px-4 text-white">
-        <p className="mb-[1.5%] text-[40px] ">Leaderboard</p>
+        <p className="mb-[1.5%] text-[40px] font-gourd">Leaderboard</p>
         <div className="bg-[#FFFFFF0D] h-[70%] w-[95%] p-[10px] lg:p-[20px]">
           <div className="flex items-center border-b-[2px] border-white justify-between p-[10px] mt-[20px] bg-[#FFFFFF0D]">
             <div className="flex items-center space-x-[10px]">

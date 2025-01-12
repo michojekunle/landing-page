@@ -19,12 +19,13 @@ export default async function Lorekeeper() {
   return (
     <div className="min-h-screen bg-zinc-900 text-white">
       {/* set the background to a s3 url */}
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(https://s3-alpha-sig.figma.com/img/bdde/f58c/3a4bb88df9d4ed17c3ce6544b6f5c025?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=d7hMFb-nDcfRbyKjtGZkoPictJ~rpKNxp7q8niD4FcP5MFjokYpr~vEcsnDCi3Zp8hVa~DIs5~rpgVcm9YBqS9U7r4AtPu28IuJE4Wmc41WL~g1q6rm0bAGTGLv4tp7lJVAtsRihUu33Rvm47tQGehn42yRQ~LrsKkAFVgHQPGJAmLuxnDl3ZGZd7uPWJeAl-MSaNKGH~dBduDGVWD-dkYbSHE82DZUUuAsVdo-8h0lLHD~lxAt~plderLPG8JdLKzF9PoApE1bCCSHFYCY0cZECI97jKn-ovIqoC0GikNbwD0~Z-mQ1oKJnhz4uxdzF4hgXhkcicoZCTa1KpT8Vtw__)` }}></div>
-      <div className="relative z-10 flex flex-col items-center justify-center h-screen max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between w-full">
-          <div className="flex flex-col items-left justify-center gap-6">
+      <div className="bg-cover bg-center pt-[15%] px-[20px] lg:pt-[4%] h-full lg:h-screen" style={{ backgroundImage: `url(https://s3-alpha-sig.figma.com/img/bdde/f58c/3a4bb88df9d4ed17c3ce6544b6f5c025?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=d7hMFb-nDcfRbyKjtGZkoPictJ~rpKNxp7q8niD4FcP5MFjokYpr~vEcsnDCi3Zp8hVa~DIs5~rpgVcm9YBqS9U7r4AtPu28IuJE4Wmc41WL~g1q6rm0bAGTGLv4tp7lJVAtsRihUu33Rvm47tQGehn42yRQ~LrsKkAFVgHQPGJAmLuxnDl3ZGZd7uPWJeAl-MSaNKGH~dBduDGVWD-dkYbSHE82DZUUuAsVdo-8h0lLHD~lxAt~plderLPG8JdLKzF9PoApE1bCCSHFYCY0cZECI97jKn-ovIqoC0GikNbwD0~Z-mQ1oKJnhz4uxdzF4hgXhkcicoZCTa1KpT8Vtw__)` }}>
+     
+      <div className="mx-auto w-full lg:w-[85%]  border-white">
+        <div className=" border-white flex flex-col lg:flex-row items-center justify-between w-full">
+          <div className="flex flex-col items-left justify-center lg:gap-6">
             <div className="font-extrabold flex items-baseline ">
-              <h1 className="text-7xl font-extrabold">{convertToDigits(user?.points || 0)}</h1>
+              <h1 className="text-[45px] lg:text-7xl font-extrabold">{convertToDigits(user?.points || 0)}</h1>
               <h1>/2500</h1>
             </div>
             <div className="font-gourd text-5xl font-normal">
@@ -33,39 +34,42 @@ export default async function Lorekeeper() {
             </div>
 
             {/* Badges, Points, Roles */}
-            <div className="flex items-center gap-2">
+            <div className="flex flex-row items-start lg:items-center mt-[20px] lg:mt-0 gap-2">
               <div className="flex items-center justify-between gap-2">
-                <div className="bg-[#262626] rounded-full p-[2px] size-[43px]">
+                {/* <div className="bg-[#262626] rounded-full p-[2px] size-[43px]">
                   <BadgeIcon />
-                </div>
+                </div> */}
+                <img src="./badge.svg" className="h-[43px] w-[43px]" alt="" />
                 <div className="gap-0">
-                  <h1 className="text-md font-bold">BADGES</h1>
+                  <h1 className="text-[14px] lg:text-md font-bold">BADGES</h1>
                   <h1 className="text-sm">{`#${user?.badges?.length || 0}`}</h1>
                 </div>
               </div>
-              <div className="bg-[#D2D6DB42] border border-[#d2d6db26] h-[26px] w-[1px]"></div>
+              <div className="bg-[#D2D6DB42] border border-[#d2d6db26] h-[26px] w-[1px] hidden lg:flex"></div>
               <div className="flex items-center justify-between gap-2">
-                <div className="bg-[#262626] rounded-full p-[2px] size-[43px]">
+                {/* <div className="bg-[#262626] rounded-full p-[2px] size-[43px]">
                   <PointsIcon />
-                </div>
+                </div> */}
+                                <img src="./point.svg" className="h-[43px] w-[43px]" alt="" />
+
                 <div className="gap-0">
-                  <h1 className="text-md font-bold">POINTS</h1>
+                  <h1 className="text-[14px] lg:text-md font-bold">POINTS</h1>
                   <h1 className="text-sm">{`${user?.badges?.length || 0}`}</h1>
                 </div>
               </div>
-              <div className="bg-[#D2D6DB42] border border-[#d2d6db26] h-[26px] w-[1px]"></div>
+              <div className="hidden lg:flex bg-[#D2D6DB42] border border-[#d2d6db26] h-[26px] w-[1px]"></div>
               <div className="flex items-center justify-between gap-2">
                 <div className="bg-[#262626] rounded-full p-[2px] size-[43px]">
                   <RoleIcon />
                 </div>
                 <div className="gap-0">
-                  <h1 className="text-md font-bold">ROLES</h1>
+                  <h1 className="text-[14px] lg:text-md font-bold">ROLES</h1>
                   <h1 className="text-sm">{`#${user?.badges?.length || "B.0.0"}`}</h1>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 mt-2">
+            <div className="flex items-start gap-4 mt-[40px] lg:mt-2">
               <Link  href={discordAuthUrl}>
               <Button  className="bg-[#F624211C] border-[3px] border-[#F624214D] rounded-full size-[43px] gap-2 w-fit text-white hover:bg-[#F6242133] max-w-[200px]">
                 <DiscordIcon />
@@ -84,11 +88,13 @@ export default async function Lorekeeper() {
 
           </div>
           <div className="text-white">
-           <img src="./defaultAvatar.svg" className="" alt="" />
+           <img src="./defaultAvatar.svg"  className="h-[450px]" alt="" />
           </div>
         </div>
         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit cupiditate laboriosam placeat molestiae, consequuntur maiores blanditiis, praesentium voluptate, adipisci nostrum? Labore consequatur placeat delectus aperiam voluptate. Corporis, totam tempore.</div>
       </div>
+     </div>
+     
     </div>
   );
 }
