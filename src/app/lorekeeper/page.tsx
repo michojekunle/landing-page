@@ -28,7 +28,7 @@ export default async function Lorekeeper() {
               <h1 className="text-[45px] lg:text-7xl font-extrabold">{convertToDigits(user?.points || 0)}</h1>
               <h1>/2500</h1>
             </div>
-            <div className="font-gourd text-5xl font-normal">
+            <div className="font-gourd text-[30px] lg:text-5xl font-normal">
               {/* <h1>lorem</h1> */}
               {user ? <h1>{user?.name}</h1> : <h1>riftlender.eth</h1>}
               {/* <h1>{user?.name}</h1> */}
