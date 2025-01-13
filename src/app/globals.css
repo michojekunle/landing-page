@@ -4,15 +4,15 @@
 
 @font-face {
   font-family: "Overused Grotesk";
-  src: url("/fonts/OverusedGrotesk-Regular.woff2") format("woff2"),
-    url("/fonts/OverusedGrotesk-Regular.woff") format("woff");
+  src: url("../../public/fonts/OverusedGrotesk-Medium.ttf") format("truetype"),
+    url("../../public/fonts/OverusedGrotesk-SemiBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "GourdUnc";
-  src: url("/src/fonts/GourdUnc.ttf") format("truetype");
+  src: url("../../public/fonts/GourdUnc.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

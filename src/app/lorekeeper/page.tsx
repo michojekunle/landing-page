@@ -30,7 +30,8 @@ export default async function Lorekeeper() {
             </div>
             <div className="font-gourd text-5xl font-normal">
               {/* <h1>lorem</h1> */}
-              <h1>{user?.name}</h1>
+              {user ? <h1>{user?.name}</h1> : <h1>riftlender.eth</h1>}
+              {/* <h1>{user?.name}</h1> */}
             </div>
 
             {/* Badges, Points, Roles */}
@@ -91,7 +92,12 @@ export default async function Lorekeeper() {
            <img src="./defaultAvatar.svg"  className="h-[450px]" alt="" />
           </div>
         </div>
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit cupiditate laboriosam placeat molestiae, consequuntur maiores blanditiis, praesentium voluptate, adipisci nostrum? Labore consequatur placeat delectus aperiam voluptate. Corporis, totam tempore.</div>
+        <div className="flex">
+          <div>
+            <img src="./learn.svg" className="h-[150px]" alt="" />
+          </div>
+          <div>truetype</div>
+        </div>
       </div>
      </div>
      
