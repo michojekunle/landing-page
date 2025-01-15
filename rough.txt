@@ -1,1 +1,0 @@
-relative z-10 flex flex-col items-center justify-center h-full lg:h-screen max-w-6xl lg:mx-auto px-4 max-h-screen
